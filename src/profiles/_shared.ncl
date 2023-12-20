@@ -1,8 +1,8 @@
 let contracts = import "../meta/contracts.ncl" in
 {
   profiles | not_exported = {
-    home = import "home.ncl",
-    work = import "work.ncl",
+    home   = import "home.ncl",
+    devops = import "devops.ncl",
   },
   FieldsSubsetOfSpecificProfiles | not_exported = profiles
     |> std.record.values
@@ -14,14 +14,15 @@ let contracts = import "../meta/contracts.ncl" in
   shared = {
     packages = {
       "pkgs.nickel" = null,
-      "pkgs.eza" = null, "pkgs.ripgrep" = null, "pkgs.fd" = null,
-      "pkgs.git" = null,
+      "pkgs.eza" = null, "pkgs.ripgrep" = null, "pkgs.fd" = null, "pkgs.tree" = null,
       "pkgs.helix" = null,
-      "pkgs.lf" = null,
       "pkgs.tmux" = null,
+      "pkgs.nmap" = null, "pkgs.unixtools.nettools" = null, "pkgs.dig" = null,
 
+      "pkgs.lf" = null,   "pkgs.fzf"  = null,  "pkgs.atool" = null,
       "pkgs.pass" = null, "pkgs.gnupg" = null, "pkgs.pinentry" = null, "pkgs.pinentry-curses" = null,
 
+      "pkgs.jq" = null,
       #"xorg.xrandr",
       #"neomutt"
 

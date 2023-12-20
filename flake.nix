@@ -44,7 +44,10 @@
         nickel-json = builtins.fromJSON (builtins.readFile nickel-run.out);
 
       in home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = system; };
+        pkgs = import nixpkgs {
+          system = system;
+          config.allowUnfree = true;
+        };
         modules = [ ./home-manager.nix ];
 
         # These are passed as extra arguments to the modules (functions)

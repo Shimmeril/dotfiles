@@ -2,6 +2,7 @@ let lib    = import "../meta/lib.ncl" in
 
 fun external => {
   packages = {
+    "pkgs.git"     = null,
     "pkgs.neomutt" = null,
     #"pkgs.mpv"     = null,
   }

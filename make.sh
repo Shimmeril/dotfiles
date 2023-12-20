@@ -19,8 +19,13 @@ main() {
     )" "Invalid host."
   )"}" || exit "$?"
 
+  # Until we find a better way, this is the way it has to be
+  # It has to be a file tracked by git for flakes to use it
+  if [ "work" = "${host}" ]; then
+    sed -i "s|<REPLACE>|$( printf %s /mnt/c/Users/*[0-9]* )|" "hosts.nix"
+  fi
 
-  home-manager switch --flake ".#${host}"
+  home-manager switch --extra-experimental-features "nix-command flakes" --flake ".#${host}"
 }
 
 prompt() {

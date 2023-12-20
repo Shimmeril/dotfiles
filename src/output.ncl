@@ -18,7 +18,7 @@ let filegen = (import "filegen.ncl") | Array {
 
 {
   # overrides
-  profile_id: String | default | not_exported = "work",
+  profile_id: String | default | not_exported = "devops",
   external                     | not_exported = "",
 
   _profile | not_exported = profile_list.profiles."%{profile_id}" external
