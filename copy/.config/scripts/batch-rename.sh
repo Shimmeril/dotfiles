@@ -1,1 +1,0 @@
-../../../share/batch-rename/batch-rename.sh

@@ -1,1 +1,0 @@
-../../../share/namedpath/namedpath.sh
